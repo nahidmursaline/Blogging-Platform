@@ -25,9 +25,9 @@ const Header = () => {
    
     <>
       <li><Link to='/'>Home</Link></li>
-     <li><Link to='/allColleges'>Colleges</Link></li>
-     <li><Link  to='/admission'>Admission</Link></li>
-      <li><Link  to='/mycollege'>My College</Link></li>
+     <li><Link to='/allColleges'>All Blogs</Link></li>
+     <li><Link  to='/admission'>My Blogs</Link></li>
+    
 
      
      {/* {user?.email? <>
@@ -61,8 +61,8 @@ const Header = () => {
              
             </ul>
           </div>
-          <Link to='/' className="w-[53px] h-[53px] mr-2 rounded-full "><img style={{ width:70}} src={logo} alt="" /></Link>
-          <h5 className='text-3xl font-bold '>College Hunts</h5>
+          <Link to='/' className="w-[53px] h-[53px] mr-2 "><img className='rounded-full' style={{ width:70}} src={logo} alt="" /></Link>
+          <h5 className='text-3xl font-bold '>Blogging Platform</h5>
         </div>
           
         <div className="navbar-center hidden lg:flex">
