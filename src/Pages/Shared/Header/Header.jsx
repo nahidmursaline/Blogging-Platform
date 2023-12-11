@@ -3,18 +3,19 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../Images/Logo/logoBlog2.png'
-// import { AuthContext } from '../../../Provider/AuthProvider';
+import { AuthContext } from '../../Providers/AuthProvider';
+
 
 const Header = () => {
 
  
-// const {user,logOut} = useContext(AuthContext);
+const {user,logOut} = useContext(AuthContext);
 
-// const handleLogOut = ()=> {
-//   logOut()
-//   .then(()=> {})
-//   .catch(error => console.log(error))
-// }
+const handleLogOut = ()=> {
+  logOut()
+  .then(()=> {})
+  .catch(error => console.log(error))
+}
 
 
 
@@ -27,10 +28,11 @@ const Header = () => {
       <li><Link to='/'>Home</Link></li>
      <li><Link to='/allColleges'>All Blogs</Link></li>
      <li><Link  to='/admission'>My Blogs</Link></li>
+     
     
 
      
-     {/* {user?.email? <>
+     {user?.email? <>
       
      
       <li><button onClick={handleLogOut} >Log Out</button></li>
@@ -40,8 +42,8 @@ const Header = () => {
     
     <li><Link to='/login'>Login</Link></li>}
      {
-              user && <img className='ms-4 rounded-full' title= {user.displayName}style={{"height" : "38px", "width" : "38px"}} src={user.photoURL} alt="" />
-            } */}
+              user && <img className='ms-4 rounded-full' title= {user?.displayName}style={{"height" : "38px", "width" : "38px"}} src={user?.photoURL} alt="" />
+            }
     
     </>
     
