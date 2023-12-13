@@ -26,17 +26,21 @@ const handleLogOut = ()=> {
    
     <>
       <li><Link to='/'>Home</Link></li>
-     <li><Link to='/allColleges'>All Blogs</Link></li>
-     <li><Link  to='/admission'>My Blogs</Link></li>
+     <li><Link to='/allBlogs'>All Blogs</Link></li>
+     <li><Link to='/addBlog'>Add Blog</Link></li>
+     
+     <li><Link  to='/about'>About</Link></li>
      
     
 
      
      {user?.email? <>
       
-     
+      <li><Link  to='/myBlog'>My Blogs</Link></li>
+      <div className='flex justify-center items-center'>
       <li><button onClick={handleLogOut} >Log Out</button></li>
-      <Link to='/profile'><span className='pt-8 pt-[40px] text-red-500'>{user?.displayName}</span></Link>
+      <Link><span className=' text-pink-600'>{user?.displayName}</span></Link>
+      </div>
      
      </>:
     

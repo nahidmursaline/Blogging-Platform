@@ -1,8 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
+import About from "../Pages/About/About";
+import AddBlog from "../Pages/AddBlog/AddBlog";
+import AllBlogs from "../Pages/AllBlogs/AllBlogs";
+import BlogDetails from "../Pages/BlogDetails/BlogDetails";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
+import MyBlog from "../Pages/MyBlog/MyBlog";
 import SignUp from "../Pages/SignUp/SignUp";
+import UpdateBlog from "../Pages/UpdateBlog/UpdateBlog";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +27,35 @@ export const router = createBrowserRouter([
        {
         path: 'signup',
         element: <SignUp></SignUp>
-       }
+       },
+       {
+        path: 'addBlog',
+        element: <AddBlog></AddBlog>
+       },
+      {
+        path: 'allBlogs',
+        element: <AllBlogs></AllBlogs>,
+        // loader: () => fetch('http://localhost:5000/blog')
+      },
+      {
+        path: 'blogDetails/:id',
+        element: <BlogDetails></BlogDetails>,
+        loader: ({params})=> fetch(`http://localhost:5000/blog/${params.id}`)
+      },
+      {
+        path: 'myBlog',
+        element: <PrivateRoute><MyBlog></MyBlog></PrivateRoute>
+      },
+      {
+        path: 'updateBlog/:id',
+        element: <UpdateBlog></UpdateBlog>,
+        loader: ({params}) => fetch(`http://localhost:5000/blog/${params.id}`)
+
+      },
+      {
+        path: 'about',
+        element: <About></About>
+      }
       ]
     },
   ]);
