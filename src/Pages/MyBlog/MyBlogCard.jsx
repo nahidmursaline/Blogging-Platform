@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const MyBlogCard = ({blog}) => {
+const MyBlogCard = ({blog, myBlogs, setMyBlogs}) => {
     const {title, theme, author, ratings, post, date, photo, _id} = blog;
 
     const handleDelete = _id => {
@@ -30,6 +30,8 @@ const MyBlogCard = ({blog}) => {
                         text: "Your blog has been deleted.",
                         icon: "success"
                       });
+                      const remaining = myBlogs.filter(b => b._id !== _id);
+                      setMyBlogs(remaining)
                 }
             })
             }
@@ -37,8 +39,8 @@ const MyBlogCard = ({blog}) => {
     }
     return (
         <div>
-             <section className='pt-28'>
-            <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg my-5  group">
+             <section className=''>
+            <div className="relative flex w-full max-w-[26rem] h-[620px] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg  group">
                 <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img
                         src={photo}
@@ -73,7 +75,7 @@ const MyBlogCard = ({blog}) => {
                                 viewBox="0 0 24 24"
                                 fill="currentColor"
                                 aria-hidden="true"
-                                className="-mt-0.5 h-5 w-5 text-yellow-700"
+                                className="-mt-0.5 h-5 w-5 text-pink-500"
                             >
                                 <path
                                     fill-rule="evenodd"
@@ -89,7 +91,7 @@ const MyBlogCard = ({blog}) => {
                         <h5 className="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
                             {title}
                         </h5>
-                        
+                        <p className='text-xs text-center border-2 px-2 rounded-full bg-pink-200'>{theme}</p>
                     </div>
                     <p className="block font-[500] text-base text-[17px]  leading-relaxed text-gray-700 antialiased">
                         By {author}

@@ -5,8 +5,8 @@ const AllBlogsCard = ({blog}) => {
     const {title, theme, author, ratings, post, date, photo, _id} = blog;
     return (
         <div>
-           <section>
-            <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg my-5  group">
+           <section className=''>
+            <div className="relative flex w-full max-w-[26rem] h-[620px] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg   group">
                 <div className="relative mx-4 mt-4 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                     <img
                         src={photo}
@@ -41,7 +41,7 @@ const AllBlogsCard = ({blog}) => {
                                 viewBox="0 0 24 24"
                                 fill="currentColor"
                                 aria-hidden="true"
-                                className="-mt-0.5 h-5 w-5 text-yellow-700"
+                                className="-mt-0.5 h-5 w-5 text-pink-500"
                             >
                                 <path
                                     fill-rule="evenodd"
@@ -57,7 +57,7 @@ const AllBlogsCard = ({blog}) => {
                         <h5 className="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
                             {title}
                         </h5>
-                        
+                        <p className='text-xs text-center border-2 px-2 rounded-full bg-pink-200'>{theme}</p>
                     </div>
                     <p className="block font-[500] text-base text-[17px]  leading-relaxed text-gray-700 antialiased">
                         By {author}
@@ -67,14 +67,25 @@ const AllBlogsCard = ({blog}) => {
                     </p>
 
                 </div>
-                <div className="p-6 pt-3">
-                    <Link to={`/blogDetails/${_id}`}
-                        className="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                        type="button"
-                        data-ripple-light="true"
-                    >
-                        Details
-                    </Link>
+                <div className="mx-auto p-6 pt-3 flex justify-center">
+                <Link
+  to={`/blogDetails/${_id}`}
+  className="block w-full select-none rounded-lg bg-pink-500 py-3.5 px-7 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+  type="button"
+  data-ripple-light="true"
+  style={{
+    position: 'absolute',
+    
+    left: 0,
+    bottom: 20, // adjust this value to your desired margin from bottom
+    left: 0,
+    marginLeft: '5%', // adjust this value based on desired margin from left
+    marginRight: '5%', // adjust this value based on desired margin from right
+    width: '90%'
+  }}
+>
+  Details
+</Link>
                 </div>
             </div>
 

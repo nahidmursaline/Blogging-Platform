@@ -31,7 +31,15 @@ Mention the types of blogs you focus on
 Highlight unique features that set your platform apart
 Share a story about the inspiration behind your website
 Use a call to action to encourage users to explore and sign up
-I hope this gives you a good starting point for your About section!</p>
+I hope this gives you a good starting point for your About section! <br /><br />
+Top Features: <ul>
+    <ol>1. Blog Create</ol>
+    <li>2. Blog Read </li>
+    <li>3. Blog Update </li>
+    <li>4. Blog Delete</li>
+    <li>5. Blog Details</li>
+</ul>
+</p>
         </div>
     );
 };

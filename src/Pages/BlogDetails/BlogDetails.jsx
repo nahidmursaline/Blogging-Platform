@@ -60,7 +60,7 @@ const BlogDetails = () => {
                         <h5 className="block font-sans text-xl font-medium leading-snug tracking-normal text-blue-gray-900 antialiased">
                             {title}
                         </h5>
-                        <p className=' border-2 px-2 rounded-full bg-pink-200'>{theme}</p>
+                        <p className='text-center text-base border-2 px-2 rounded-full bg-pink-200'>{theme}</p>
                     </div>
                     <p className="block font-[500] text-base text-[17px]  leading-relaxed text-gray-700 antialiased">
                         By {author}

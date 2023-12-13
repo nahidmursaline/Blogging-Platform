@@ -52,7 +52,7 @@ const AddBlog = () => {
         <div>
         <div className="container mx-auto flex justify-center items-center min-h-screen">
   <div className="w-full md:w-3/4 bg-white rounded-lg shadow-md p-8">
-    <h1 className="text-4xl font-extrabold mb-8 text-center">Add a Blog</h1>
+    <h1 className="text-3xl font-bold mb-8 text-center">Add a Blog</h1>
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col md:flex-row gap-4">
         <div className="w-full md:w-1/2">
@@ -61,6 +61,7 @@ const AddBlog = () => {
               <span className="label-text">Blog Title</span>
             </div>
             <input
+            required
               type="text"
               name="title"
               placeholder="Blog Title"
@@ -74,6 +75,7 @@ const AddBlog = () => {
               <span className="label-text">Theme</span>
             </div>
             <input
+            required
               type="text"
               name="theme"
               placeholder="Theme"
@@ -89,6 +91,7 @@ const AddBlog = () => {
               <span className="label-text">Author</span>
             </div>
             <input
+            required
               type="text"
               name="author"
               defaultValue={user?.displayName}
@@ -103,6 +106,7 @@ const AddBlog = () => {
               <span className="label-text">Ratings</span>
             </div>
             <input
+            required
               type="text"
               name="ratings"
               placeholder="Ratings"
@@ -118,6 +122,7 @@ const AddBlog = () => {
               <span className="label-text">Photo URL</span>
             </div>
             <input
+            required
               type="text"
               name="photo"
               placeholder="Photo URL"
@@ -131,6 +136,7 @@ const AddBlog = () => {
               <span className="label-text">Date</span>
             </div>
             <input
+            required
               type="date"
               name="date"
               
@@ -146,6 +152,7 @@ const AddBlog = () => {
               <span className="label-text">Write your post</span>
             </div>
             <textarea
+            required
               type="text"
               name="post"
               placeholder="Write your post here"

@@ -35,8 +35,8 @@ const UpdateBlog = () => {
         .then(res => res.json())
         .then(data => {
           console.log(data)
-          if(data.insertedId){
-            event.target.reset();
+          if(data.modifiedCount > 0){
+            
             Swal.fire({
               position: "center",
               icon: "success",
@@ -44,7 +44,7 @@ const UpdateBlog = () => {
               showConfirmButton: false,
               timer: 1500
             });
-            
+            event.target.reset();
           }
           
         })
